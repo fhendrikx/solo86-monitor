@@ -1,0 +1,10 @@
+*.a
+*.bin
+*.img
+*.map
+*.o
+*.sys
+cross/*
+!cross/Makefile
+lib/*
+out/*

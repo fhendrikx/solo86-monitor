@@ -1,0 +1,71 @@
+#!/usr/bin/perl -w
+######################################################################
+# pad monitor file
+#
+# Ferry Hendrikx, May 2024
+######################################################################
+
+use strict;
+use warnings;
+
+use Getopt::Long;
+
+
+######################################################################
+# functions
+######################################################################
+
+sub usage
+{
+    print "usage: pad --file=<file>\n";
+
+    exit (0);
+}
+
+
+######################################################################
+# main
+######################################################################
+
+my $file;
+
+GetOptions(
+    "file=s"        => \$file,
+);
+
+
+# sanity check
+
+if (! $file)
+{
+    usage();
+
+    exit(1);
+}
+
+
+# work out size
+
+my $size    = -s $file;
+
+if ($size > 65536)
+{
+    print "pad: error: maximum size exceeded\n";
+
+    exit (1);
+}
+else
+{
+    $size = 65536 - ($size % 65536);
+
+    print "pad: $file padded to 65536 bytes\n";
+}
+
+
+# append null bytes to file
+
+open(my $fh, '>>:raw', $file) || die "unable to open file";
+print $fh ("\0"x$size);
+close($fh);
+
+exit (0);
