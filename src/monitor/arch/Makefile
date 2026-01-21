@@ -1,14 +1,14 @@
 include $(TOPDIR)/Makefile.conf
 
 NAME = libarch.a
-OBJS = console.o divmodsi3.o int.o ldivmod.o vectors.o x86lib.o
+OBJS = int.o vectors.o x86lib.o
 
 ifeq ($(ARCH), ibmpc)
-	OBJS += irq-ibmpc.o pit-ibmpc.o
+	OBJS += con-ibmpc.o com-ibmpc.o exp-ibmpc.o irq-ibmpc.o pit-ibmpc.o
 endif
 
 ifeq ($(ARCH), solo86)
-	OBJS += irq-solo86.o pit-solo86.o
+	OBJS += con-solo86.o com-solo86.o exp-solo86.o irq-solo86.o pit-solo86.o
 endif
 
 .c.o:

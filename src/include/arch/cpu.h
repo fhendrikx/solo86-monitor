@@ -1,10 +1,14 @@
 #ifndef __arch_cpu__
 #define __arch_cpu__
 
-#define nop()       __asm__ __volatile__ ("nop":::"memory")
-#define cli()       __asm__ __volatile__ ("cli":::"memory")
-#define sti()       __asm__ __volatile__ ("sti":::"memory")
-#define hlt()       __asm__ __volatile__ ("hlt":::"memory")
+#define nop() \
+        asm volatile ("nop":::"memory")
+#define cli() \
+        asm volatile ("cli":::"memory")
+#define sti() \
+        asm volatile ("sti":::"memory")
+#define hlt() \
+        asm volatile ("hlt":::"memory")
 
 #define flags_get() \
     ({ \

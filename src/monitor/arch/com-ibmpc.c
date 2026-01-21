@@ -1,28 +1,24 @@
 #include <arch/console.h>
+#include <arch/pio.h>
+#include <arch/ibmpc/ports.h>
 
 
 /**********************************************************************
  * functions
  **********************************************************************/
 
-int con_fputc(char c)
+void com_setup()
 {
-    con_putc(c);
-
-    return 0;
+    // FIXME
 }
 
-int con_fputs(const char *str)
+void com_putc(char c)
 {
-    while (*str)
-    {
-        con_putc(*str++);
-    }
-
-    return 0;
+    // FIXME
 }
 
-void con_init()
+char com_getc()
 {
-    con_setup();
+    // FIXME
 }
+

@@ -3,7 +3,6 @@
 
 #include <arch/types.h>
 
-
 void int_setup(void);
 void int_set(word_t, word_t, seg_t);
 

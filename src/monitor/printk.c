@@ -1,7 +1,7 @@
 #include <stdarg.h>
 #include <arch/cpu.h>
 #include <arch/mem.h>
-#include <monitor/console.h>
+#include <libc/stdio.h>
 #include <monitor/printk.h>
 #include <monitor/segment.h>
 
@@ -46,8 +46,8 @@ static void numout(__u32 v, int width, int base, int useSign, int Lower, int Zer
     vch = 0;
 
     if (alt && base == 16) {
-        con_fputc('0');
-        con_fputc('x');
+        putc('0');
+        putc('x');
     }
 
     do {
@@ -74,13 +74,13 @@ static void numout(__u32 v, int width, int base, int useSign, int Lower, int Zer
             }
 
             if (vch)
-                con_fputc(vch);
+                putc(vch);
 
             vch = *(hex_string + Lower + c);
         }
     } while (--i);
 
-    con_fputc(vch);
+    putc(vch);
 }
 
 static void vprintk(const char *fmt, va_list p)
@@ -92,12 +92,12 @@ static void vprintk(const char *fmt, va_list p)
     while ((c = *fmt++))
     {
         if (c != '%')
-            con_fputc(c);
+            putc(c);
         else {
             c = *fmt++;
 
             if (c == '%') {
-                con_fputc(c);
+                putc(c);
                 continue;
             }
 
@@ -160,17 +160,17 @@ static void vprintk(const char *fmt, va_list p)
             //str:
                 str = va_arg(p, char *);
                 while ((zero = peekb((word_t)str++, n))) {
-                    con_fputc(zero);
+                    putc(zero);
                     width--;
                 }
             case 'c':
                 while (--width >= 0)
-                    con_fputc(' ');
+                    putc(' ');
                 if (c == 'c')
-                    con_fputc(va_arg(p, int));
+                    putc(va_arg(p, int));
                 break;
             default:
-                con_fputc('?');
+                putc('?');
             }
         }
     }
@@ -189,7 +189,7 @@ void panic(const char *fmt, ...)
 {
     va_list args;
 
-    con_fputs("PANIC: ");
+    puts("PANIC: ");
 
     va_start(args, fmt);
     vprintk(fmt, args);

@@ -14,11 +14,6 @@ typedef __u32               long_t;
 
 typedef __u16               seg_t;
 typedef __u16               flag_t;
-
-typedef __u16               gid_t;
-typedef __u16               uid_t;
-typedef __u16               mode_t;
-typedef __u16               pid_t;
 typedef __u16               size_t;
 
 #ifndef NULL

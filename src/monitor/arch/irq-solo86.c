@@ -11,11 +11,11 @@ void irq_enable(word_t irq)
         return;
 
     unsigned char mask = 1 << irq;
-    unsigned char state = inb(PIC_CMD);
+    unsigned char state = inb(PIC_CTRL);
 
     state |= mask;
 
-    outb(state, PIC_CMD);
+    outb(state, PIC_CTRL);
 }
 
 void irq_disable(word_t irq)
@@ -24,11 +24,11 @@ void irq_disable(word_t irq)
         return;
 
     unsigned char mask = 1 << irq;
-    unsigned char state = inb(PIC_CMD);
+    unsigned char state = inb(PIC_CTRL);
 
     state &= mask;
 
-    outb(state, PIC_CMD);
+    outb(state, PIC_CTRL);
 }
 
 void irq_setup()

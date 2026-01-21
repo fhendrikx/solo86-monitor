@@ -1,23 +1,26 @@
-# Solo86-monitor
+# Solo86 Monitor
 
-This repository contains the code and tools required to build Solo86-monitor.
+This repository contains the code and tools required to build the Solo86
+Monitor. The Monitor is effectively the BIOS and first programme loaded
+when booting a Solo86 machine.
 
 
-## What is Solo86-monitor?
+## What is the Monitor?
 
-Solo86-monitor is an boot monitor built for the IBM PC and Solo86 platforms.
+The Monitor is an boot monitor built for the Solo86 (with some options
+included to make it compatible with the IBM PC platform).
 
 
 ## Hardware
 
-Solo86-monitor is targetted at the Solo86 platform and the IBM PC platform.
-These platforms both consist of single CPU boards, with a standardised set
-of peripherals, and up to 1024KB of RAM.
+The Monitor is targetted at the Solo86 platform (and somewhat at the
+IBM PC platform). These platforms both consist of single CPU boards, with
+a standardised set of peripherals, and up to 1024KB of RAM.
 
 
-## Building Solo86-monitor
+## Building the Monitor
 
-### What tools do I need to build Solo86-monitor?
+### What tools do I need to build the Monitor?
 
 You'll need to install the following:
 - gcc
@@ -43,7 +46,7 @@ Buld the GCC IA-16 cross compiler:
     make
 
 
-### Building Solo86-monitor
+### Building the Monitor
 
 Load the environment for building:
 
@@ -51,20 +54,13 @@ Load the environment for building:
 
 Then, export the environment you want to build for:
 
-    export ARCH="ibmpc"
+    export ARCH="solo86"
 
 or
 
-    export ARCH="solo86"
+    export ARCH="ibmpc"
 
 Then build the system:
 
     make
-
-
-### Booting Solo86-monitor
-
-If you compiled for the IBM PC platform, there should be a single boot16.img
-file in the boot/ directory. This is a bootable image that will boot on your
-emulator, or on actual hardware.
 
