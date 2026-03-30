@@ -3,7 +3,7 @@
 #include <arch/types.h>
 
 #include <libc/stdio.h>
-#include <monitor/exp.h>
+#include <monitor/device.h>
 #include <monitor/irq.h>
 #include <monitor/monitor.h>
 #include <monitor/printk.h>
@@ -41,6 +41,13 @@ void mon_banner()
     printk("Built with GCC %s @ %s\n", __VERSION__, SYS_BUILD);
 }
 
+void mon_command(char *buffer)
+{
+    printk("you typed [%s]\n", buffer);
+
+    if (strcmp(buffer, ""))
+
+}
 
 /**********************************************************************
  * main
@@ -48,10 +55,10 @@ void mon_banner()
 
 void monitor(void)
 {
-    char buffer[64];
+    char buffer[32];
 
     irq_init();
-    exp_init();
+    dev_init();
 
     mon_banner();
 
@@ -59,7 +66,7 @@ void monitor(void)
     {
         gets(buffer);
 
-        printk("you typed [%s]\n", buffer);
+        mon_command(buffer);
     }
 }
 

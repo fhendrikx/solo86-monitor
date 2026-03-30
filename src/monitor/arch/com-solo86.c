@@ -9,7 +9,7 @@
 
 void com_setup()
 {
-    // FIXME
+    // TODO
 }
 
 void com_putc(char c)

@@ -9,16 +9,16 @@
 
 void com_setup()
 {
-    // FIXME
+    // TODO
 }
 
 void com_putc(char c)
 {
-    // FIXME
+    // TODO
 }
 
 char com_getc()
 {
-    // FIXME
+    // TODO
 }
 

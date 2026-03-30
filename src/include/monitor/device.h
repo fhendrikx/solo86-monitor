@@ -1,12 +1,9 @@
-#ifndef __monitor_device__
-#define __monitor_device__
+#ifndef __monitor_dev__
+#define __monitor_dev__
 
 #include <arch/types.h>
+#include <arch/device.h>
 
-struct dev_ops {
-    int         (*init) ();
-    size_t      (*read) ();
-    size_t      (*write)();
-};
+void dev_init(void);
 
 #endif

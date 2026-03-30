@@ -2,7 +2,7 @@ include $(TOPDIR)/Makefile.conf
 
 NAME = monitor
 LIBS = -Larch -Llibc -lc -larch -lc
-OBJS = exp.o fault.o irq.o monitor.o printk.o
+OBJS = device.o fault.o irq.o monitor.o printk.o
 
 .c.o:
 	$(CC) $(CCFLAGS) -o $*.o $<

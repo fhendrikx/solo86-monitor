@@ -56,7 +56,7 @@ start:
 
     # start monitor
 
-    call monitor
+    jmp monitor
 
     cli
     hlt

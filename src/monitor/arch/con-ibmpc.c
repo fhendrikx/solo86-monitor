@@ -9,16 +9,16 @@
 
 void con_setup()
 {
-    // FIXME
+    // TODO
 }
 
 void con_putc(char c)
 {
-    // FIXME
+    // TODO
 }
 
 char con_getc()
 {
-    // FIXME
+    // TODO
 }
 

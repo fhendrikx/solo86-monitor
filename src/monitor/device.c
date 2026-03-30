@@ -1,4 +1,4 @@
-#include <arch/exp.h>
+#include <arch/device.h>
 #include <errno.h>
 
 
@@ -7,7 +7,7 @@
  **********************************************************************/
 
 // expansion devices list
-expansion_t devices[16];
+device_t    devices[16];
 
 // settings list
 setting_t   settings[16];
@@ -17,9 +17,10 @@ setting_t   settings[16];
  * functions
  **********************************************************************/
 
-void exp_init()
+void dev_init()
 {
-    // detect expansion hardware
+    // detect devices and settings
 
-    exp_setup(devices, settings);
+    dev_setup(devices, settings);
 }
+
