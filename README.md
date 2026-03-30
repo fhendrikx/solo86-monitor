@@ -1,21 +1,18 @@
 # Solo86 Monitor
 
-This repository contains the code and tools required to build the Solo86
-Monitor. The Monitor is effectively the BIOS and first programme loaded
-when booting a Solo86 machine.
+This repository contains the code and tools required to build the Solo86 Monitor. The Monitor is effectively the BIOS and first programme loaded when booting a Solo86 machine.
+
+PLEASE NOTE: this repository contains on-going work and should NOT be considered final. The existing monitor contained in the main [Solo86](https://github.com/fhendrikx/solo86/tree/main/software) is the current production version.
 
 
 ## What is the Monitor?
 
-The Monitor is an boot monitor built for the Solo86 (with some options
-included to make it compatible with the IBM PC platform).
+The Monitor is an boot monitor built for the Solo86 (with some additional code included to make it compatible with the IBM PC platform).
 
 
 ## Hardware
 
-The Monitor is targetted at the Solo86 platform (and somewhat at the
-IBM PC platform). These platforms both consist of single CPU boards, with
-a standardised set of peripherals, and up to 1024KB of RAM.
+The Monitor is targetted at the Solo86 platform (and somewhat at the IBM PC platform). These platforms both consist of single CPU boards, with a standardised set of peripherals, and up to 1024KB of RAM.
 
 
 ## Building the Monitor
